@@ -93,16 +93,16 @@ bot.on('message', function (event) {
     case 'image':
       event.message.content().then(function (data) {
         const s = data.toString('hex').substring(0, 32);
-        return event.reply('Nice picture! ' + s);
+        return event.reply('哇!美美噠( ♥д♥) ' + s);
       }).catch(function (err) {
         return event.reply(err.toString());
       });
       break;
     case 'video':
-      event.reply('Nice video!');
+      event.reply('要是我夠聰明能夠看懂影片就好了(╥﹏╥)');
       break;
     case 'audio':
-      event.reply('Nice audio!');
+      event.reply('好好聽的聲音唷!已戀愛(▰˘◡˘▰)');
       break;
     case 'location':
       event.reply(['That\'s a good location!', 'Lat:' + event.message.latitude, 'Long:' + event.message.longitude]);
