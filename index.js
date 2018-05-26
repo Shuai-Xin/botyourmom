@@ -82,7 +82,7 @@ bot.on('message', function (event) {
           event.reply('linebot@' + require('../package.json').version);
           break;
         default:
-          event.reply(event.message.text).then(function (data) {
+          event.reply('雖然聽不懂...不過還是禮貌性地覆述你說的話：'+event.message.text).then(function (data) {
             console.log('Success', data);
           }).catch(function (error) {
             console.log('Error', error);
@@ -92,8 +92,7 @@ bot.on('message', function (event) {
       break;
     case 'image':
       event.message.content().then(function (data) {
-        const s = data.toString('hex').substring(0, 32);
-        return event.reply('哇!美美噠( ♥д♥) ' + s);
+        return event.reply('哇!美美噠( ♥д♥)');
       }).catch(function (err) {
         return event.reply(err.toString());
       });
