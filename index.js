@@ -32,4 +32,8 @@ bot.on('message', function(event) {
       console.log('error');
     });
   }
+  else if (event.message.type = 'sticker'){
+    event.reply('人家看不懂貼圖（´◔∀◔`)').then(function(data){
+      console.log('suc');
+    };
 });
