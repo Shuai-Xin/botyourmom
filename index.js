@@ -33,10 +33,10 @@ bot.on('message', function(event) {
     });
   }
   else if (event.message.type = 'sticker') {
-    let sti = '人家看不懂貼圖啦（´◔∀◔`)';
+    var sti = '人家看不懂貼圖啦!';
     event.reply(sti).then(function(data) {
       // success 
-      console.log('suc');
+      console.log(sti);
     }).catch(function(error) {
       // error 
       console.log('error');
