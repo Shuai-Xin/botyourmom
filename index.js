@@ -32,7 +32,7 @@ bot.on('message', function(event) {
       console.log('error');
     });
   }
-  else if (event.message.type = 'sticker') {
+  if(event.message.type = 'image') {
     var sti = '人家看不懂貼圖啦!';
     event.reply(sti).then(function(data) {
       // success 
