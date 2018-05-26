@@ -27,10 +27,18 @@ bot.on('message', function(event) {
     event.reply(msg).then(function(data) {
       // success 
       console.log(msg);
-    })
-  }
-  else if (event.message.type = 'sticker'){
-    event.reply('人家看不懂貼圖（´◔∀◔`)').then(function(data){
-      console.log('suc');
+    }).catch(function(error) {
+      // error 
+      console.log('error');
     });
+  }
+  else if (event.message.type = 'sticker') {
+    event.reply('人家看不懂貼圖啦（´◔​∀◔`)').then(function(data) {
+      // success 
+      console.log('suc');
+    }).catch(function(error) {
+      // error 
+      console.log('error');
+    });
+  }
 });
