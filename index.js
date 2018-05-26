@@ -7,10 +7,6 @@ var bot = linebot({
   channelAccessToken:'elm+hhQtgPLiL+48zVsMJ1Y9Loz9TW4IbnUMsTOGDrGsA3R5mAd77eOEnsLgfDnQ8Klz2Ka2fRVanEA0AwrdklZYjecIue19KuBZoxYFh43cwJ5ZYAIBrETmpiUkPsPXrhsbaby9oYiLEpa3pQb++QdB04t89/1O/w1cDnyilFU='
 });
 
-bot.on('message', function(event) {
-  console.log(event); //把收到訊息的 event 印出來看看
-});
-
 const app = express();
 const linebotParser = bot.parser();
 app.post('/', linebotParser);
@@ -22,6 +18,7 @@ var server = app.listen(process.env.PORT || 8080, function() {
 });
 
 bot.on('message', function(event) {
+  console.log(event); //把收到訊息的 event 印出來看看
   if (event.message.type = 'text') {
     var msg = event.message.text;
     event.reply('禮貌性地覆述一次你說的話：'+msg).then(function(data) {
@@ -32,9 +29,18 @@ bot.on('message', function(event) {
       console.log('error');
     });
   }
-  if(event.message.type = 'image') {
-    var sti = '人家看不懂貼圖啦!';
+  else if(event.message.type = 'sticker') {
+    var sti = '人家看不懂貼圖啦（´◔∀◔`)';
     event.reply(sti).then(function(data) {
+      // success 
+      console.log(sti);
+    }).catch(function(error) {
+      // error 
+      console.log('error');
+    });
+  }
+  else {
+    event.reply('蛤').then(function(data) {
       // success 
       console.log(sti);
     }).catch(function(error) {
