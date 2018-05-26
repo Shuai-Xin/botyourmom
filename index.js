@@ -22,8 +22,8 @@ var server = app.listen(process.env.PORT || 8080, function() {
 });
 
 bot.on('message', function(event) {
-  if (event.message.type = 'sticker') {
-    var msg = '我只是個笨蛋機器人，看不懂貼圖啦（´◔∀◔`)';
+  if (event.message.type = 'text') {
+    var msg = event.message.text;
     event.reply(msg).then(function(data) {
       // success 
       console.log(msg);
