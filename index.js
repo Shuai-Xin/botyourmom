@@ -22,7 +22,7 @@ var server = app.listen(process.env.PORT || 8080, function() {
 });
 
 bot.on('message', function(event) {
-  if (event.message.type = '') {
+  if (event.message.type = 'sticker') {
     var msg = '我只是個笨蛋機器人，看不懂貼圖啦（´◔∀◔`)';
     event.reply(msg).then(function(data) {
       // success 
